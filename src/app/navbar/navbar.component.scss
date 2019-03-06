@@ -1,20 +1,26 @@
+header {
+  background: #fff;
+  padding: 0 10% 1% 10%;
+}
+
 .logo {
   font-weight: 300;
+  letter-spacing: 1px;
   span {
-    color: rgb(255, 255, 118);
+    color: #a4cfff;
   }
 }
 
 nav {
-  font-family: 'M PLUS Rounded 1c', sans-serif;
   padding-top: 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  text-transform: uppercase;
+  font-family: 'M PLUS Rounded 1c', sans-serif;
   font-weight: 700;
   ul {
     display: flex;
+    text-transform: uppercase;
     li {
       list-style: none;
       a {
