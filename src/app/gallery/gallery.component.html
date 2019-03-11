@@ -1,7 +1,9 @@
-<section class="gallery">
-  <ul id="thumbnails">
+<section class="container">
+  <ul class="gallery">
     <li *ngFor="let image of visibleImages">
-      <img src="{{image.url}}" class="gallery__image" width="200" height="160" />
+      <div class="gallery__item">
+        <img src="{{image.url}}" class="gallery__image" width="500" height="500" alt="{{image.caption}}"/>
+      </div>
     </li>
   </ul>
 </section>
