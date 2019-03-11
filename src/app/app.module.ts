@@ -7,6 +7,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { GalleryComponent } from './gallery/gallery.component';
 import { ImageDetailComponent } from './image-detail/image-detail.component';
+import { UploadComponent } from './upload/upload.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { ImageDetailComponent } from './image-detail/image-detail.component';
     NavbarComponent,
     DashboardComponent,
     GalleryComponent,
-    ImageDetailComponent
+    ImageDetailComponent,
+    UploadComponent
   ],
   imports: [
     BrowserModule,
