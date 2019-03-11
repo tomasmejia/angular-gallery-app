@@ -12,10 +12,9 @@ const IMAGES = [
   providedIn: 'root'
 })
 export class ImageService {
-  visibleImages = [];
 
   getImages() {
-    return this.visibleImages = IMAGES.slice(0, 4);
+    return IMAGES.slice(0, 4);
   }
 
   getImage(id: string) {

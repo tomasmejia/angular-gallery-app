@@ -7,17 +7,15 @@ import { ImageService } from '../image.service';
   styleUrls: ['./gallery.component.scss']
 })
 export class GalleryComponent implements OnInit {
-  visibleImages: [];
+  visibleImages: any[];
 
   constructor(private imageService: ImageService) {}
 
   ngOnInit() {
     this.getImages();
-    console.log(this.visibleImages);
   }
 
   getImages(): void {
-    this.imageService.getImages();
+    this.visibleImages = this.imageService.getImages();
   }
-
 }
