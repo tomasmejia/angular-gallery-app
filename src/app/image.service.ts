@@ -1,10 +1,13 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { IMAGES } from './shared/images';
+import { makeId } from './shared/randomId';
 @Injectable({
   providedIn: 'root'
 })
 export class ImageService {
+  constructor(private router: Router) {}
+
   getImages() {
     return IMAGES;
   }
@@ -15,15 +18,14 @@ export class ImageService {
 
   uploadImage(form) {
     const image = {
-      id: '5',
+      id: makeId(),
       url: form.imageUrl,
       caption: form.caption
     };
     IMAGES.unshift(image);
+    console.log(IMAGES);
     setTimeout(() => {
       return this.router.navigate(['/']);
     }, 2000);
   }
-
-  constructor(private router: Router) {}
 }
