@@ -20,5 +20,15 @@ export class ImageService {
   getImage(id: string) {
     return [...IMAGES].find(image => image.id === id);
   }
+
+  uploadImage(url: string, caption: string) {
+    const newImg = {
+      id: '5',
+      caption,
+      url,
+    };
+    return IMAGES.push(newImg);
+  }
+
   constructor() { }
 }

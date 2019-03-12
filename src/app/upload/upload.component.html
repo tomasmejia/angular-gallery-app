@@ -11,6 +11,7 @@
       />
       <div *ngIf="imageUrl.touched && imageUrl.invalid">
         <div *ngIf="imageUrl.errors['required']">URL is required</div>
+        <div *ngIf="imageUrl.errors['mustBeValidUrl']">Link must be a valid image source</div>
       </div>
     </div>
     <div class="form__group">

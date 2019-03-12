@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { ImageUrlValidators } from './imageUrl.validators';
 
 @Component({
   selector: 'app-upload',
@@ -8,7 +9,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 })
 export class UploadComponent implements OnInit {
   uploadForm = new FormGroup({
-    imageUrl: new FormControl('', Validators.required),
+    imageUrl: new FormControl('', [Validators.required, ImageUrlValidators.mustBeValidUrl]),
     caption: new FormControl('', Validators.required),
   });
 
@@ -23,6 +24,5 @@ export class UploadComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {
-    console.log(this.uploadForm);
   }
 }
