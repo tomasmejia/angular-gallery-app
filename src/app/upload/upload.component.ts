@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { ImageUrlValidators } from './imageUrl.validators';
+import { ImageService } from '../image.service';
 
 @Component({
   selector: 'app-upload',
@@ -21,8 +22,15 @@ export class UploadComponent implements OnInit {
     return this.uploadForm.get('caption');
   }
 
-  constructor() {}
+  constructor(private imageService: ImageService) {}
 
   ngOnInit() {
+  }
+
+  upload() {
+    // this.uploadForm.setErrors({
+    //   invalidUpload: true,
+    // });
+    return this.imageService.uploadImage(this.uploadForm.value);
   }
 }

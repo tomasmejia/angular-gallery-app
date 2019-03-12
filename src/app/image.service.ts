@@ -14,20 +14,21 @@ const IMAGES = [
 export class ImageService {
 
   getImages() {
-    return IMAGES.slice(0, 4);
+    return IMAGES;
   }
 
   getImage(id: string) {
     return [...IMAGES].find(image => image.id === id);
   }
 
-  uploadImage(url: string, caption: string) {
-    const newImg = {
+  uploadImage(form) {
+    const image = {
       id: '5',
-      caption,
-      url,
+      url: form.imageUrl,
+      caption: form.caption,
     };
-    return IMAGES.push(newImg);
+    console.log(image);
+    return IMAGES.unshift(image);
   }
 
   constructor() { }

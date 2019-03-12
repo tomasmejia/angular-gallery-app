@@ -13,6 +13,7 @@ export class GalleryComponent implements OnInit {
 
   ngOnInit() {
     this.getImages();
+    console.log(this.visibleImages);
   }
 
   getImages(): void {
