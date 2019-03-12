@@ -2,10 +2,10 @@
   <h2>Upload a new image</h2>
   <form class="form" [formGroup]="uploadForm" (ngSubmit)="upload()">
     <div class="form__alert" *ngIf="uploadForm.errors">
-      The form is invalid.
+      <div>The form is invalid.</div>
     </div>
     <div class="form__group">
-      <label for="imageUrl">Image's URL.</label>
+      <label for="imageUrl">Source </label>
       <input
         formControlName="imageUrl"
         id="imageUrl"
@@ -14,19 +14,24 @@
       />
       <div class="form__alert" *ngIf="imageUrl.touched && imageUrl.invalid">
         <div *ngIf="imageUrl.errors['required']">URL is required</div>
-        <div *ngIf="imageUrl.errors['mustBeValidUrl']">Link must be a valid image source (jpg/jpeg/png/gif)</div>
+        <div *ngIf="imageUrl.errors['mustBeValidUrl']">Link must be a valid image source</div>
       </div>
     </div>
     <div class="form__group">
-      <label for="caption">Caption</label>
+      <label for="caption">Caption </label>
       <input
         formControlName="caption"
         type="text"
         id="caption"
         class="form__control"
       />
-      <div *ngIf="caption.touched && caption.invalid">Caption is required</div>
+      <div class="form__alert" *ngIf="caption.touched && caption.invalid">
+        <div>Caption is required</div>
+      </div>
     </div>
     <button>Submit</button>
+    <div class="form__success" *ngIf="wasSubmitted === true">
+      Succesfully submitted.
+    </div>
   </form>
 </section>

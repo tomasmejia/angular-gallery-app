@@ -9,6 +9,7 @@ import { ImageService } from '../image.service';
   styleUrls: ['./upload.component.scss']
 })
 export class UploadComponent implements OnInit {
+  wasSubmitted: boolean;
   uploadForm = new FormGroup({
     imageUrl: new FormControl('', [
       Validators.required,
@@ -30,11 +31,12 @@ export class UploadComponent implements OnInit {
   ngOnInit() {}
 
   upload() {
-    if (this.uploadForm.hasError) {
+    if (this.uploadForm.status === 'INVALID') {
       this.uploadForm.setErrors({
         invalidUpload: true
       });
     } else {
+      this.wasSubmitted = true;
       return this.imageService.uploadImage(this.uploadForm.value);
     }
   }
