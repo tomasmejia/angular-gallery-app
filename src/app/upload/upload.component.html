@@ -1,13 +1,27 @@
 <section class="container">
   <h2>Upload a new image</h2>
-  <form class="form">
+  <form class="form" [formGroup]="uploadForm">
     <div class="form__group">
       <label for="imageUrl">Image's URL.</label>
-      <input id="imageUrl" type="text" class="form__control">
+      <input
+        formControlName="imageUrl"
+        id="imageUrl"
+        type="text"
+        class="form__control"
+      />
+      <div *ngIf="imageUrl.touched && imageUrl.invalid">
+        <div *ngIf="imageUrl.errors['required']">URL is required</div>
+      </div>
     </div>
     <div class="form__group">
       <label for="caption">Caption</label>
-      <input type="text" id="caption" class="form__control">
+      <input
+        formControlName="caption"
+        type="text"
+        id="caption"
+        class="form__control"
+      />
+      <div *ngIf="caption.touched && caption.invalid">CAption is required</div>
     </div>
     <button>Submit</button>
   </form>
