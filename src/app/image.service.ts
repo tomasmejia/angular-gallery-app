@@ -27,7 +27,6 @@ export class ImageService {
       url: form.imageUrl,
       caption: form.caption,
     };
-    console.log(image);
     return IMAGES.unshift(image);
   }
 

@@ -10,8 +10,11 @@ import { ImageService } from '../image.service';
 })
 export class UploadComponent implements OnInit {
   uploadForm = new FormGroup({
-    imageUrl: new FormControl('', [Validators.required, ImageUrlValidators.mustBeValidUrl]),
-    caption: new FormControl('', Validators.required),
+    imageUrl: new FormControl('', [
+      Validators.required,
+      ImageUrlValidators.mustBeValidUrl
+    ]),
+    caption: new FormControl('', Validators.required)
   });
 
   get imageUrl() {
@@ -24,13 +27,15 @@ export class UploadComponent implements OnInit {
 
   constructor(private imageService: ImageService) {}
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   upload() {
-    // this.uploadForm.setErrors({
-    //   invalidUpload: true,
-    // });
-    return this.imageService.uploadImage(this.uploadForm.value);
+    if (this.uploadForm.hasError) {
+      this.uploadForm.setErrors({
+        invalidUpload: true
+      });
+    } else {
+      return this.imageService.uploadImage(this.uploadForm.value);
+    }
   }
 }

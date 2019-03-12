@@ -1,6 +1,5 @@
 import { AbstractControl, ValidationErrors } from '@angular/forms';
-
-const regexForImages = /\.(jpeg|jpg|png|gif)/g;
+import { regexForImages } from '../shared/regexValidator';
 
 export class ImageUrlValidators {
   static mustBeValidUrl(control: AbstractControl): ValidationErrors|null {
