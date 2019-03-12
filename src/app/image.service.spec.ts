@@ -17,12 +17,16 @@ describe('ImageService', () => {
   });
 
   it('should fetch images from the method', () => {
+    // Arrange
     const service: ImageService = TestBed.get(ImageService);
+    // Act
     const serviceImages = service.getImages();
+    // Assert
     expect(serviceImages).toBe(IMAGES);
   });
 
   it('should add an image', () => {
+    // Arrange
     const service: ImageService = TestBed.get(ImageService);
     const imgArray = service.getImages();
     const mockForm = {
@@ -34,7 +38,9 @@ describe('ImageService', () => {
       url: '/testpic.jpg',
       caption: 'foobar2000'
     };
+    // Act
     service.uploadImage(mockForm);
+    // Assert
     expect(imgArray).toContain(mockImage);
   });
 });
