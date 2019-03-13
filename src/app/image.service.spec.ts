@@ -4,7 +4,7 @@ import { ImageService } from './image.service';
 import { RouterTestingModule } from '@angular/router/testing';
 import { IMAGES } from './shared/images';
 
-fdescribe('ImageService', () => {
+describe('ImageService', () => {
   let service: ImageService;
 
   beforeEach(async(() => {
@@ -14,11 +14,11 @@ fdescribe('ImageService', () => {
     service = TestBed.get(ImageService);
   }));
 
-  fit('should be created', () => {
+  it('should be created', () => {
     expect(service).toBeTruthy();
   });
 
-  fit('should fetch images from the method', () => {
+  it('should fetch images from the method', () => {
     // Arrange
     // Act
     const serviceImages = service.getImages();
@@ -26,7 +26,7 @@ fdescribe('ImageService', () => {
     expect(serviceImages).toBe(IMAGES);
   });
 
-  fit('should add an image', () => {
+  it('should add an image', () => {
     // Arrange
     const imgArray = [{ id: '1', url: 'test.jpg', caption: 'foobar' }];
     const mockForm = { imageUrl: '/testpic.jpg', caption: 'foobar2000' };
