@@ -8,7 +8,7 @@ import { ImageService } from '../image.service';
 })
 export class ImageDetailComponent implements OnInit {
 
-  constructor(private imageService: ImageService) { }
+  constructor() { }
 
   ngOnInit() {
   }
