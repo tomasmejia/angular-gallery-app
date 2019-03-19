@@ -1,3 +1,6 @@
+@import '../sass/abstracts/variables';
+@import '../sass/base/fonts';
+
 .container {
   margin: 1rem;
   display: flex;
@@ -6,7 +9,7 @@
   align-items: center;
 
   h2 {
-    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-family: $mplus, sans-serif;
     font-size: 2rem;
     letter-spacing: 3px;
     text-transform: uppercase;
@@ -18,28 +21,28 @@
   height: 30%;
   margin: 2rem;
   padding: 1rem;
-  border: 1px solid gray;
+  border: 1px solid $color-primary-dark;
   justify-content: center;
   align-items: center;
   display: flex;
   flex-direction: column;
 
   .form__success {
-    background: #b0ffb0;
-    font-size: .8rem;
+    background: $color-success;
+    font-size: 0.8rem;
     padding: 10px;
     margin: 5px;
     border-radius: 0;
-    box-shadow: 1px 1px 1px #aaaaaa;
+    box-shadow: 1px 1px 1px $color-primary-dark;
   }
 
   .form__alert div {
-    background: #ffb0c7;
-    font-size: .8rem;
+    background: $color-failure;
+    font-size: 0.8rem;
     padding: 10px;
     margin: 5px;
     border-radius: 0;
-    box-shadow: 1px 1px 1px #aaaaaa;
+    box-shadow: 1px 1px 1px $color-primary-dark;
   }
 
   button {
@@ -47,9 +50,9 @@
     padding: 1rem 2rem;
     margin-top: 1rem;
     text-decoration: none;
-    background: #a4cfff;
-    color: #ffffff;
-    font-family: sans-serif;
+    background: $color-secondary;
+    color: $color-white;
+    font-family: $source-sans, sans-serif;
     font-size: 1rem;
     line-height: 1;
     cursor: pointer;
@@ -57,10 +60,10 @@
     transition: background 250ms ease-in-out, transform 150ms ease;
     &:hover,
     &:focus {
-      background: #87bcfa;
+      background: $color-secondary-dark;
     }
     &:focus {
-      outline: 1px solid #fff;
+      outline: 1px solid $color-white;
       outline-offset: -4px;
     }
     &:active {
