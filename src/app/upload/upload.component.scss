@@ -2,6 +2,7 @@
 @import "../sass/base/fonts";
 @import "../sass/components/button";
 @import "../sass/components/input";
+@import "../sass/abstracts/mixins";
 
 .container {
   margin: 1rem;
@@ -11,8 +12,8 @@
   align-items: center;
 
   h2 {
+    @include headline($color-primary-dark, 2rem);
     font-family: $mplus, sans-serif;
-    font-size: 2rem;
     letter-spacing: 3px;
     text-transform: uppercase;
   }
