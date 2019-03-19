@@ -1,0 +1,16 @@
+input {
+  margin-left: 1rem;
+  border: none;
+  background: none;
+  border-bottom: 1px solid $color-primary-dark;
+  &::placeholder {
+    transform: translateY(0px);
+    transition: 0.5s;
+  }
+  &:hover,
+  &:focus,
+  &:active:focus {
+    outline: none;
+    border-bottom: 1px solid $color-secondary;
+  }
+}
