@@ -1,5 +1,6 @@
 @import '../sass/abstracts/variables';
 @import '../sass/base/fonts';
+@import '../sass/components/button';
 
 .container {
   margin: 1rem;
@@ -43,31 +44,5 @@
     margin: 5px;
     border-radius: 0;
     box-shadow: 1px 1px 1px $color-primary-dark;
-  }
-
-  button {
-    border: none;
-    padding: 1rem 2rem;
-    margin-top: 1rem;
-    text-decoration: none;
-    background: $color-secondary;
-    color: $color-white;
-    font-family: $source-sans, sans-serif;
-    font-size: 1rem;
-    line-height: 1;
-    cursor: pointer;
-    text-align: center;
-    transition: background 250ms ease-in-out, transform 150ms ease;
-    &:hover,
-    &:focus {
-      background: $color-secondary-dark;
-    }
-    &:focus {
-      outline: 1px solid $color-white;
-      outline-offset: -4px;
-    }
-    &:active {
-      transform: scale(0.99);
-    }
   }
 }
