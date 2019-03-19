@@ -1,6 +1,6 @@
-@import '../sass/abstracts/variables';
-@import '../sass/base/fonts';
-@import '../sass/components/button';
+@import "../sass/abstracts/variables";
+@import "../sass/base/fonts";
+@import "../sass/components/button";
 
 .container {
   margin: 1rem;
@@ -33,16 +33,21 @@
     font-size: 0.8rem;
     padding: 10px;
     margin: 5px;
-    border-radius: 0;
-    box-shadow: 1px 1px 1px $color-primary-dark;
+    color: $color-text-success;
+    border-radius: .25rem;
+    border: 1px solid $color-text-success-light;
+    font-family: $source-sans, sans-serif;
   }
 
   .form__alert div {
+    text-align: center;
     background: $color-failure;
     font-size: 0.8rem;
     padding: 10px;
     margin: 5px;
-    border-radius: 0;
-    box-shadow: 1px 1px 1px $color-primary-dark;
+    border: 1px solid $color-text-failure-light;
+    border-radius: .25rem;
+    color: $color-text-failure;
+    font-family: $source-sans, sans-serif;
   }
 }
