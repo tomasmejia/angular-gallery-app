@@ -3,6 +3,7 @@
 @import "../sass/components/button";
 @import "../sass/components/input";
 @import "../sass/abstracts/mixins";
+@import "../sass/components/form";
 
 .container {
   margin: 1rem;
@@ -16,40 +17,5 @@
     font-family: $mplus, sans-serif;
     letter-spacing: 3px;
     text-transform: uppercase;
-  }
-}
-
-.form {
-  width: 30%;
-  height: 30%;
-  margin: 2rem;
-  padding: 1rem;
-  border: 1px solid $color-primary-dark;
-  justify-content: center;
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-
-  .form__success {
-    background: $color-success;
-    font-size: 0.8rem;
-    padding: 10px;
-    margin: 5px;
-    color: $color-text-success;
-    border-radius: 0.25rem;
-    border: 1px solid $color-text-success-light;
-    font-family: $source-sans, sans-serif;
-  }
-
-  .form__alert div {
-    text-align: center;
-    background: $color-failure;
-    font-size: 0.8rem;
-    padding: 10px;
-    margin: 5px;
-    border: 1px solid $color-text-failure-light;
-    border-radius: 0.25rem;
-    color: $color-text-failure;
-    font-family: $source-sans, sans-serif;
   }
 }
