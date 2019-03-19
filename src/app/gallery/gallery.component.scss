@@ -1,3 +1,4 @@
+@import '../sass/abstracts/variables';
 .gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(24rem, 1fr));
@@ -7,13 +8,21 @@
 
 .gallery__item {
 	margin: 1rem;
-	box-shadow: 0.3rem 0.4rem 0.4rem rgba(0, 0, 0, 0.4);
   overflow: hidden;
+
+  &:hover {
+    transform: scale(1.05);
+    box-shadow: 0 2.5rem 4rem rgba($color-black, .2);
+  }
+  &:active {
+    transform: scale(1.5);
+    box-shadow: 0 2.5rem 4rem rgba($color-black, .4);
+  }
 }
 
 .gallery__image {
 	display: block;
 	width: 100%;
 	height: 100%;
-	object-fit: cover;
+  object-fit: cover;
 }
