@@ -2,11 +2,13 @@
   <ul class="gallery">
     <li *ngFor="let image of visibleImages">
       <div class="gallery__item">
-        <img
-          src="{{ image.url }}"
-          class="gallery__image"
-          alt="{{ image.caption }}"
-        />
+        <a href="{{image.source}}" target="_blank">
+            <img
+            src="{{ image.url }}"
+            class="gallery__image"
+            alt="{{ image.caption }}"
+          />
+        </a>
       </div>
     </li>
   </ul>

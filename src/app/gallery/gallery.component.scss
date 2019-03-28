@@ -8,7 +8,9 @@
   column-gap: 1em;
 }
 
+
 .gallery__item {
+  cursor: pointer;
   margin: 1rem;
   overflow: hidden;
   transition: all 0.5s;
