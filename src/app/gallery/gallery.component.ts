@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnChanges } from '@angular/core';
 import { ImageService } from '../image.service';
+import { Images } from '../shared/Images';
 
 @Component({
   selector: 'app-gallery',
@@ -7,17 +8,16 @@ import { ImageService } from '../image.service';
   styleUrls: ['./gallery.component.scss']
 })
 export class GalleryComponent implements OnInit {
-  visibleImages: [];
+  visibleImages: Images[];
 
   constructor(private imageService: ImageService) {}
 
   ngOnInit() {
-    this.getImages();
-    console.log(this.visibleImages);
+      this.imageService.getImages();
   }
 
-  getImages(): void {
-    this.imageService.getImages()
-    .subscribe(images => this.visibleImages = images);
+  get images() {
+    return this.imageService.images;
   }
+
 }
